@@ -16,4 +16,4 @@ antora:
     - "@antora/lunr-extension"
 output:
   clean: true
-  dir: docs
+  # dir: docs
