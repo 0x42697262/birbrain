@@ -30,8 +30,10 @@ jobs:
       - name: Install Antora with the Antora Lunr Extension
         run: npm i antora @antora/lunr-extension
       - name: Generate Site
+        if: steps.build.outcome == 'success'
         run: npx antora --fetch antora-playbook.yml
       - name: Upload Artifacts
+        if: steps.build.outcome == 'success'
         uses: actions/upload-pages-artifact@v2
         with:
           path: build/site
