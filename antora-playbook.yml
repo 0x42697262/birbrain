@@ -1,0 +1,19 @@
+site:
+  title: 🐔 birbrain
+  url: https://0x42697262.github.io/知識
+  start_page: 知識::index.adoc
+content:
+  sources:
+    - url: ~/Documents/wiki/asciidoc
+      branches: HEAD
+ui:
+  supplemental_files: ./supplemental-ui
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+antora:
+  extensions:
+    - "@antora/lunr-extension"
+output:
+  clean: true
+  dir: public
