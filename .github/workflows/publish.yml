@@ -33,9 +33,11 @@ jobs:
         id: generate_site
         run: npx antora antora-playbook.yml
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v2
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v2
         with:
+          name: generated-site
           path: build/site
       - name: Deploy to GitHub Pages
-        needs: [build]
+        if: ${{ success() }}
         uses: actions/deploy-pages@v2
