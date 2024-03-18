@@ -1,6 +1,6 @@
 name: Publish to GitHub Pages with Extensions
 on:
- workflow_run:
+  workflow_run:
     workflows: ["Automatic Updates from Contents"]
     types:
       - completed
