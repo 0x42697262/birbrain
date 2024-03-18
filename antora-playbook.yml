@@ -1,6 +1,6 @@
 site:
   title: 🐔 birbrain
-  url: https://0x42697262.github.io/知識
+  url: https://0x42697262.github.io/birbrain/知識
   start_page: 知識::index.adoc
 content:
   sources:
