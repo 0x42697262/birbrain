@@ -1,9 +1,9 @@
-name: workflow_02
+name: Automatic Updates from Contents
 on: [repository_dispatch]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Triggering Wokflow 2"
+      - run: echo "Will run 'Publish to GitHub Pages with Extensions' workflow"
       - name: Checkout
         uses: actions/checkout@v2

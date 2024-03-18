@@ -1,5 +1,9 @@
 name: Publish to GitHub Pages with Extensions
 on:
+ workflow_run:
+    workflows: ["Automatic Updates from Contents"]
+    types:
+      - completed
   push:
     branches: [main]
   # Allows you to run this workflow manually from the Actions tab
