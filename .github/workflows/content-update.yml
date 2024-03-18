@@ -1,0 +1,9 @@
+name: birbrain
+on: [repository_dispatch]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering birbrain Antora update"
+      - name: Checkout
+        uses: actions/checkout@v2

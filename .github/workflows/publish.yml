@@ -1,4 +1,4 @@
-name: Publish to GitHub Pages with Lunr Search Extension
+name: Publish to GitHub Pages with Extensions
 on:
   push:
     branches: [main]
