@@ -4,8 +4,8 @@ site:
   start_page: 知識::index.adoc
 content:
   sources:
-    # - url: ~/Documents/wiki/asciidoc/
     - url: https://github.com/0x42697262/birbrain-content.git
+      # - url: ~/Documents/wiki/asciidoc/
       branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui
@@ -15,6 +15,11 @@ ui:
 antora:
   extensions:
     - "@antora/lunr-extension"
+asciidoc:
+  extensions:
+    - asciidoctor-kroki
+  attributes:
+    experimental: ""
 output:
   clean: true
   # dir: docs
