@@ -4,7 +4,7 @@ site:
   start_page: 知識::知識.adoc
 content:
   sources:
-    - url: https://github.com/0x42697262/birbrain-content.git
+    - url: ~/wiki/asciidoc/
       branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui
