@@ -1,7 +1,7 @@
 site:
   title: 🐔 birbrain
   url: https://0x42697262.github.io/birbrain/知識
-  start_page: 知識::知識.adoc
+  start_page: 知識::index.adoc
 content:
   sources:
     - url: https://github.com/0x42697262/birbrain-content.git
