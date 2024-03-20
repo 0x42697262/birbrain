@@ -17,6 +17,7 @@ antora:
 asciidoc:
   extensions:
     - asciidoctor-kroki
+    - "@djencks/asciidoctor-mathjax"
   attributes:
     experimental: ""
 output:
