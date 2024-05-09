@@ -35,7 +35,7 @@ jobs:
         run: npm i antora @antora/lunr-extension
       - name: Install AsciiDoctor-Kroki Extension
         run: npm i asciidoctor-kroki
-      - name: Install "@djencks/asciidoctor-mathjax"
+      - name: Install @djencks/asciidoctor-mathjax
         run: npm i @djencks/asciidoctor-mathjax
       - name: Generate Site
         run: npx antora antora-playbook.yml

@@ -4,7 +4,11 @@ site:
   start_page: 知識::index.adoc
 content:
   sources:
-    - url: ~/wiki/asciidoc/
+    - url: ~/wiki/birbrain-content
+      branches: HEAD
+    - url: ~/wiki/malware-development-using-rust
+      branches: HEAD
+    - url: ~/wiki/birbrain-writeups
       branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui

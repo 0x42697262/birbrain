@@ -6,6 +6,10 @@ content:
   sources:
     - url: https://github.com/0x42697262/birbrain-content.git
       branches: HEAD
+    - url: https://github.com/0x42697262/malware-development-using-rust.git
+      branches: HEAD
+    - url: https://github.com/0x42697262/birbrain-writeups.git
+      branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui
   bundle:
