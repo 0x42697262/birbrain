@@ -27,27 +27,32 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.ACTIONS_KEY }}
+
       - name: Configure Pages
         uses: actions/configure-pages@v3
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "18"
+
       - name: Install Lunr Extension
         run: npm i antora @antora/lunr-extension
+
       - name: Install AsciiDoctor-Kroki Extension
         run: npm i asciidoctor-kroki
+
       - name: Install @djencks/asciidoctor-mathjax
         run: npm i @djencks/asciidoctor-mathjax
+
       - name: Generate Site
         run: npx antora antora-playbook.yml
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.ACTIONS_KEY }}
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v2
         with:
           path: build/site
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
