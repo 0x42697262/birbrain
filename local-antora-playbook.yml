@@ -10,6 +10,8 @@ content:
       branches: HEAD
     - url: ~/wiki/birbrain-writeups
       branches: HEAD
+    - url: ~/wiki/archives
+      branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui
   bundle:
