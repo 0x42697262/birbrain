@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 uses: actions/checkout@v4
 with:
-  token: ${{ secrets.ACTIONS_SECRET }}
+  token: ${{ secrets.ACTIONS_KEY }}
 concurrency:
   group: github-pages
   cancel-in-progress: false
