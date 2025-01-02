@@ -10,7 +10,7 @@ content:
       branches: HEAD
     - url: https://github.com/0x42697262/birbrain-writeups.git
       branches: HEAD
-    - url: https://${{ secrets.ACTIONS_KEY }}github.com/0x42697262/birbrain-archives.git
+    - url: https://${{ secrets.ACTIONS_KEY }}@github.com/0x42697262/birbrain-archives.git
       branches: HEAD
 ui:
   supplemental_files: ./supplemental-ui
