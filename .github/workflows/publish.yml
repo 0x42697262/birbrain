@@ -8,6 +8,9 @@ on:
     branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+uses: actions/checkout@v4
+with:
+  token: ${{ secrets.ACTIONS_SECRET }}
 concurrency:
   group: github-pages
   cancel-in-progress: false
