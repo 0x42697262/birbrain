@@ -1,4 +1,7 @@
 name: Publish to GitHub Pages with Extensions
+uses: actions/checkout@v4
+with:
+  token: ${{ secrets.ACTIONS_KEY }}
 on:
   workflow_run:
     workflows: ["Automatic Updates from Contents"]
@@ -8,9 +11,6 @@ on:
     branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-uses: actions/checkout@v4
-with:
-  token: ${{ secrets.ACTIONS_KEY }}
 concurrency:
   group: github-pages
   cancel-in-progress: false
