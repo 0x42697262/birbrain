@@ -1,7 +1,4 @@
 name: Publish to GitHub Pages with Extensions
-uses: actions/checkout@v4
-with:
-  token: ${{ secrets.ACTIONS_KEY }}
 on:
   workflow_run:
     workflows: ["Automatic Updates from Contents"]
@@ -27,6 +24,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTIONS_KEY }}
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v3
