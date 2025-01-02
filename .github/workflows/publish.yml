@@ -41,6 +41,9 @@ jobs:
         run: npm i @djencks/asciidoctor-mathjax
       - name: Generate Site
         run: npx antora antora-playbook.yml
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACTIONS_KEY }}
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v2
         with:
