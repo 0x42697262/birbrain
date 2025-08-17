@@ -6,7 +6,7 @@ content:
   sources:
     - url: ~/wiki/birbrain-content
       branches: HEAD
-    - url: ~/wiki/malware-development-using-rust
+    - url: ~/wiki/malware-development
       branches: HEAD
     - url: ~/wiki/birbrain-writeups
       branches: HEAD
