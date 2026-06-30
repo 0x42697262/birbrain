@@ -1,0 +1,15 @@
+/* Custom layout overrides for the Antora default UI.
+   On desktop (>=1024px) the default UI caps the article at max-width:46rem,
+   which leaves empty space on the right and keeps the TOC from sitting flush
+   against the right edge. Let the article fill the available width so the
+   content spreads out and the TOC is pushed all the way to the right. */
+@media screen and (min-width: 1024px) {
+  .doc {
+    max-width: none;
+  }
+
+  /* Optional: give the right-hand TOC a little more room (default is 9rem). */
+  aside.toc.sidebar {
+    flex: 0 0 12rem;
+  }
+}
