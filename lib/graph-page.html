@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Graph — 🐔 birbrain</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="_/css/site.css">
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #fff; }
+    #graph { position: absolute; inset: 0; }
+    #graph-toolbar {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid #e0e0e0;
+      font-family: "Roboto", sans-serif; font-size: 0.85rem;
+    }
+    #graph-toolbar a { color: #1565c0; text-decoration: none; font-weight: 500; white-space: nowrap; }
+    #graph-toolbar a:hover { text-decoration: underline; }
+    #graph-search {
+      flex: 0 1 16rem; min-width: 8rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid #c5c5c5; border-radius: 0.2rem;
+      font: inherit;
+    }
+    #graph-legend { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+    #graph-legend button {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid transparent; border-radius: 1rem;
+      background: none; font: inherit; color: #3b3b3b; cursor: pointer;
+    }
+    #graph-legend button:hover { background: #f0f0f0; }
+    #graph-legend button.off { opacity: 0.4; }
+    #graph-legend .swatch {
+      width: 0.7rem; height: 0.7rem; border-radius: 50%;
+      display: inline-block; border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    #graph-status { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #5d5d5d; font-family: "Roboto", sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="graph"></div>
+  <div id="graph-status">Loading graph…</div>
+  <div id="graph-toolbar">
+    <a href="./">← 🐔 birbrain</a>
+    <input id="graph-search" type="search" placeholder="Filter pages…" aria-label="Filter pages">
+    <div id="graph-legend"></div>
+  </div>
+  <script src="_/js/vendor/force-graph.min.js"></script>
+  <script src="_/js/graph-common.js"></script>
+  <script src="_/js/graph-page.js"></script>
+</body>
+</html>

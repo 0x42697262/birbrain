@@ -1,0 +1,11 @@
+{{!-- Override of the default UI's footer-scripts.hbs (bundle is snapshot: true on HEAD,
+      so this freezes the version below). First three lines must mirror the default
+      bundle's partial or site.js/highlight/search break. --}}
+<script id="site-script" src="{{{uiRootPath}}}/js/site.js" data-ui-root-path="{{{uiRootPath}}}"></script>
+<script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
+{{#if env.SITE_SEARCH_PROVIDER}}
+{{> search-scripts}}
+{{/if}}
+<script src="{{{uiRootPath}}}/js/vendor/force-graph.min.js" defer></script>
+<script src="{{{uiRootPath}}}/js/graph-common.js" defer></script>
+<script src="{{{uiRootPath}}}/js/local-graph.js" data-site-root="{{{siteRootPath}}}" defer></script>

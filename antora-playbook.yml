@@ -20,6 +20,7 @@ ui:
 antora:
   extensions:
     - "@antora/lunr-extension"
+    - ./lib/graph-extension.js
 asciidoc:
   extensions:
     - asciidoctor-kroki

@@ -13,3 +13,24 @@
     flex: 0 0 12rem;
   }
 }
+
+/* Local graph panel (mounted at the end of each article by js/local-graph.js). */
+details.local-graph {
+  margin-top: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.3rem;
+}
+
+details.local-graph > summary {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #5d5d5d;
+  user-select: none;
+}
+
+details.local-graph .local-graph-canvas {
+  height: 280px;
+  border-top: 1px solid #e0e0e0;
+  overflow: hidden;
+}
