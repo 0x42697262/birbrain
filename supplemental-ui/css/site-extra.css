@@ -14,11 +14,26 @@
   }
 }
 
-/* Local graph panel (mounted at the end of each article by js/local-graph.js). */
+/* Local graph panel (mounted by js/local-graph.js): sidebar variant sits inside
+   the right toc below Contents; details variant is the fallback at the end of
+   the article (no toc / narrow screens). */
+.local-graph.is-sidebar {
+  margin-top: 1.25rem;
+}
+
+.local-graph.is-sidebar .local-graph-canvas {
+  height: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
 details.local-graph {
   margin-top: 2rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 details.local-graph > summary {
@@ -31,6 +46,6 @@ details.local-graph > summary {
 
 details.local-graph .local-graph-canvas {
   height: 280px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }

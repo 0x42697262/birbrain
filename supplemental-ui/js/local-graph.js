@@ -1,5 +1,6 @@
-/* Mounts a collapsible local-graph panel (current page + 1-hop neighbors, links and
- * backlinks) at the bottom of each article. Does nothing on pages without links. */
+/* Mounts a local-graph panel (current page + 1-hop neighbors, links and backlinks).
+ * Preferred spot: the right sidebar, below the Contents toc. Fallback (no toc /
+ * narrow screens): a collapsible panel at the end of the article. */
 ;(function () {
   'use strict'
 
@@ -25,27 +26,47 @@
       return visible.has(data.byId.get(l.source)) && visible.has(data.byId.get(l.target))
     })
 
-    var panel = document.createElement('details')
-    panel.className = 'local-graph'
-    panel.open = true
-    var summary = document.createElement('summary')
-    summary.textContent = 'Graph'
+    // site.js removes aside.toc.sidebar on pages without headings; it is also
+    // display:none below the desktop breakpoint — offsetParent covers both.
+    var tocMenu = document.querySelector('aside.toc.sidebar .toc-menu')
+    var inSidebar = tocMenu && tocMenu.offsetParent !== null
     var canvasBox = document.createElement('div')
     canvasBox.className = 'local-graph-canvas'
-    panel.appendChild(summary)
-    panel.appendChild(canvasBox)
-    article.appendChild(panel)
+
+    if (inSidebar) {
+      var box = document.createElement('div')
+      box.className = 'local-graph is-sidebar'
+      var title = document.createElement('h3')
+      title.textContent = 'Graph'
+      box.appendChild(title)
+      box.appendChild(canvasBox)
+      tocMenu.appendChild(box)
+    } else {
+      var panel = document.createElement('details')
+      panel.className = 'local-graph'
+      panel.open = true
+      var summary = document.createElement('summary')
+      summary.textContent = 'Graph'
+      panel.appendChild(summary)
+      panel.appendChild(canvasBox)
+      article.appendChild(panel)
+    }
 
     var view = BirbGraph.create(canvasBox, { nodes: nodes, links: links }, {
       onNavigate: function (node) {
         if (node.id !== currentId) location.href = BirbGraph.hrefFor(node, siteRootHref)
       },
       width: canvasBox.clientWidth,
-      height: 280,
+      height: canvasBox.clientHeight,
       currentId: currentId,
-      labelZoom: 1,
+      relSize: 2,
+      alwaysLabels: true,
+      maxLabelLength: 16,
+      maxZoom: 2.5,
+      cooldownTime: 3000,
+      fitOnStop: true,
+      fitPadding: 20,
     })
-    view.graph.zoom(2.5)
 
     window.addEventListener('resize', function () {
       view.graph.width(canvasBox.clientWidth)
