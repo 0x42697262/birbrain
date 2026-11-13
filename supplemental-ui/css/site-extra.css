@@ -49,3 +49,21 @@ details.local-graph .local-graph-canvas {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
+
+/* Line numbers for highlight.js blocks (see js/line-numbers.js) */
+.doc pre.highlightjs > code.has-line-numbers {
+  counter-reset: line;
+}
+.doc pre.highlightjs > code.has-line-numbers .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  min-width: calc(var(--ln-digits, 2) * 1ch);
+  margin-right: 1em;
+  padding-right: 0.75em;
+  border-right: 1px solid #e1e1e1;
+  color: #999;
+  text-align: right;
+  user-select: none;
+  -webkit-user-select: none;
+}
