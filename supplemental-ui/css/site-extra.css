@@ -50,20 +50,29 @@ details.local-graph .local-graph-canvas {
   overflow: hidden;
 }
 
-/* Line numbers for highlight.js blocks (see js/line-numbers.js) */
+/* Line numbers for highlight.js blocks (see js/line-numbers.js).
+   Numbers are absolutely positioned in a fixed-width gutter so they never
+   shift the code; the divider is one background stripe for the whole block. */
 .doc pre.highlightjs > code.has-line-numbers {
+  --ln-w: calc(var(--ln-digits, 2) * 1ch);
+  position: relative;
   counter-reset: line;
+  padding-left: calc(var(--ln-w) + 2.25em);
+  background-image: linear-gradient(#e1e1e1, #e1e1e1);
+  background-size: 1px 100%;
+  background-position: calc(var(--ln-w) + 1.375em) 0;
+  background-repeat: no-repeat;
+  background-attachment: local;
 }
 .doc pre.highlightjs > code.has-line-numbers .line::before {
   counter-increment: line;
   content: counter(line);
-  display: inline-block;
-  min-width: calc(var(--ln-digits, 2) * 1ch);
-  margin-right: 1em;
-  padding-right: 0.75em;
-  border-right: 1px solid #e1e1e1;
-  color: #999;
+  position: absolute;
+  left: 0;
+  width: calc(var(--ln-w) + 0.875em);
   text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #aaa;
   user-select: none;
   -webkit-user-select: none;
 }
