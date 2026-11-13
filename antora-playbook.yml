@@ -27,6 +27,7 @@ asciidoc:
     - "@djencks/asciidoctor-mathjax"
   attributes:
     experimental: ""
+    source-highlighter: highlightjs
 output:
   clean: true
   # dir: docs
